@@ -1,0 +1,7 @@
+<h3>Welcome to micro-reddit. Sign in or browse.</h3>
+
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to post.title, post %>
+  </div>
+<% end %>
