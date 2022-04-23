@@ -1,0 +1,17 @@
+<header>
+  <%= form_with url: user_path(1), method: :get do |form| %>
+    <div>
+      <%= form.label :pseudo, "username:" %>
+      <%= form.text_field :pseudo, autocomplete: :off, placeholder: 'pythonikk' %>
+
+    </div>
+    <div>
+      <%= form.label :password, "password:" %>
+      <%= form.password_field :password, autocomplete: :off, placeholder: 'orange15!' %>
+
+    </div>
+    <div>
+      <%= form.submit "Log in" %>
+    </div>
+  <% end %>
+</header>

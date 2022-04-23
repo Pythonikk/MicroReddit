@@ -1,0 +1,15 @@
+<%= form_with model: User, method: :create do |form| %>
+    <div>
+      <%= form.label :pseudo, "username:" %>
+      <%= form.text_field :pseudo, autocomplete: :off %>
+
+    </div>
+    <div>
+      <%= form.label :password, "password:" %>
+      <%= form.password_field :password, autocomplete: :off %>
+
+    </div>
+    <div>
+      <%= form.submit "Sign up" %>
+    </div>
+  <% end %>
