@@ -1,8 +1,24 @@
+<header><%= link_to "Front Page", root_path %></header>
 <h3>Welcome, <%=  @user.pseudo %>!</h3>
 
-<%# you have #x posts: [view](link) %>
+<h5>You have contributed <%= @user.posts.length %> posts.</h5>
 
-<%# you have left #x comments: view %>
+<% @user.posts.each do |post| %>
+  <ul>
+    <li style="font-size: 14px"><%= link_to post.title, post_path(post) %></li>
+  </ul>
+<% end %>
+
+
+<h5>You have contributed <%= @user.comments.length %> comments.</h5>
+<% @user.comments.each do |cmmt| %>
+  <ul>
+    <li style="font-size: 14px">
+      "<%= cmmt.body %>" was your reply to <%= link_to cmmt.post.title, post_path(cmmt.post)%> on <%= cmmt.created_at.strftime("%m/%d/%Y") %>
+    </li>
+
+  </ul>
+<% end %>
 
 <%# view front page posts %>
 
