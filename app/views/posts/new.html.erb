@@ -1,0 +1,30 @@
+<header> <%= link_to "Front Page", root_path %></header>
+
+<h4>Add a post to the front page:</h4>
+
+<%= form_with model: Post, method: :create do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, autocomplete: :off %>
+    <% @post.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :body %>
+    <br>
+    <%= form.text_area :body, cols: "50", rows: "10", autocomplete: :off %>
+    <% @post.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.submit "Create post" %>
+  </div>
+<% end %>

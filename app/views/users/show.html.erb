@@ -1,6 +1,8 @@
 <header><%= link_to "Front Page", root_path %></header>
 <h3>Welcome, <%=  @user.pseudo %>!</h3>
 
+<%= link_to "Create New Post", new_post_path(user: @user.id) %>
+
 <h5>You have contributed <%= @user.posts.length %> posts.</h5>
 
 <% @user.posts.each do |post| %>
